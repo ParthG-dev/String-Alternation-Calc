@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Alternation Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Perfect Pattern</h1>
+            <button id="themeToggle" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+        
+        <p class="description">
+            Calculate the minimum moves needed to make a string of 'B' and 'G' characters alternate.
+            The result will show the minimum number of swaps needed to achieve either BGBGBG... or GBGBGB... pattern.
+        </p>
+        
+        <div class="input-section">
+            <div class="input-wrapper">
+                <input type="text" 
+                       id="inputString" 
+                       placeholder="Enter a string of B's and G's (e.g., BBBGGG)"
+                       maxlength="30">
+                <span class="char-counter" id="charCounter">0/30</span>
+            </div>
+            <button onclick="calculateMoves()" class="calculate-btn">
+                <i class="fas fa-calculator"></i> Calculate
+            </button>
+        </div>
+
+        <div class="result-section">
+            <h2>Result</h2>
+            <div id="result" class="result-display">
+                <div class="result-content">
+                    <span>Enter a string to see the result</span>
+                    <button class="copy-btn" onclick="copyResult()" style="display: none;">
+                        <i class="fas fa-copy"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="visualization-container">
+                <div class="visualization-section">
+                    <h3>Input String</h3>
+                    <div id="visualization" class="visualization">
+                        <!-- Visualization will be added here -->
+                    </div>
+                </div>
+                
+                <div class="visualization-section">
+                    <h3>Optimal Pattern</h3>
+                    <div id="optimalPattern" class="visualization">
+                        <!-- Optimal pattern will be added here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="explanation-section">
+                <h3>Calculation Steps</h3>
+                <div id="explanation" class="explanation">
+                    <!-- Explanation will be added here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="examples">
+            <h3>Try these examples:</h3>
+            <div class="example-buttons">
+                <button onclick="setExample('BBBBBGGGGG')">BBBBBGGGGG</button>
+                <button onclick="setExample('GGGBBBBBBBG')">GGGBBBBBBBG</button>
+                <button onclick="setExample('BGGGBBBBGGGBGGBGBGG')">BGGGBBBBGGGBGGBGBGG</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
